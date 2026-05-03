@@ -125,6 +125,19 @@
   transform: scale(var(--slide-scale, 1));
   transform-origin: center center;
 }
+/* Mobile: vertical/portrait stage — scale by width, scroll vertically */
+.slide-stage.is-portrait {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.slide-stage.is-portrait .slide-frame {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transform-origin: top left;
+  transform: scale(var(--slide-scale, 1));
+}
 
 /* Animated orb */
 @keyframes float-orb {
