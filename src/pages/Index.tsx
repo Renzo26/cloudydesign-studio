@@ -3,27 +3,37 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Grid3x3 } from "lucide-react";
 import { slides } from "@/components/slides";
 
-const useScale = (ref: React.RefObject<HTMLDivElement>) => {
+const useScale = (ref: React.RefObject<HTMLDivElement>, portrait: boolean) => {
   useEffect(() => {
     const apply = () => {
       const el = ref.current;
       if (!el) return;
       const { width, height } = el.getBoundingClientRect();
-      const scale = Math.min(width / 1920, height / 1080);
+      const scale = portrait
+        ? width / 1920
+        : Math.min(width / 1920, height / 1080);
       el.style.setProperty("--slide-scale", String(scale));
+      const frame = el.querySelector(".slide-frame") as HTMLDivElement | null;
+      if (frame && portrait) {
+        frame.style.height = `${1080 * scale}px`;
+        frame.style.width = `${1920 * scale}px`;
+      } else if (frame) {
+        frame.style.height = "";
+        frame.style.width = "";
+      }
     };
     apply();
     const ro = new ResizeObserver(apply);
     if (ref.current) ro.observe(ref.current);
     return () => ro.disconnect();
-  }, [ref]);
+  }, [ref, portrait]);
 };
 
-const Stage = ({ children }: { children: React.ReactNode }) => {
+const Stage = ({ children, portrait = false }: { children: React.ReactNode; portrait?: boolean }) => {
   const ref = useRef<HTMLDivElement>(null);
-  useScale(ref);
+  useScale(ref, portrait);
   return (
-    <div ref={ref} className="slide-stage">
+    <div ref={ref} className={`slide-stage ${portrait ? "is-portrait" : ""}`}>
       <div className="slide-frame">{children}</div>
     </div>
   );
