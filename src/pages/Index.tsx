@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Grid3x3 } from "lucide-react";
 import { slides } from "@/components/slides";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const useScale = (ref: React.RefObject<HTMLDivElement>, portrait: boolean) => {
   useEffect(() => {
