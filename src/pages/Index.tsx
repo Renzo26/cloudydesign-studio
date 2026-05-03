@@ -58,22 +58,22 @@ const Index = () => {
   const Current = slides[idx];
 
   return (
-    <main className="h-screen w-screen bg-[hsl(var(--brand-deep))] flex flex-col">
+    <main className="h-[100dvh] w-screen bg-[hsl(var(--brand-deep))] flex flex-col overflow-hidden">
       {/* Top bar */}
-      <header className="h-14 border-b border-border/60 px-6 flex items-center justify-between bg-[hsl(var(--brand-navy))]/60 backdrop-blur z-20">
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-primary glow-blue" />
-          <span className="font-display font-semibold">CloudySolutions</span>
-          <span className="text-xs font-mono text-muted-foreground ml-3">Apresentação Institucional</span>
+      <header className="h-12 sm:h-14 border-b border-border/60 px-3 sm:px-6 flex items-center justify-between bg-[hsl(var(--brand-navy))]/60 backdrop-blur z-20">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div className="w-2 h-2 rounded-full bg-primary glow-blue shrink-0" />
+          <span className="font-display font-semibold text-sm sm:text-base truncate">CloudySolutions</span>
+          <span className="hidden md:inline text-xs font-mono text-muted-foreground ml-3">Apresentação Institucional</span>
         </div>
-        <div className="flex items-center gap-2">
-          <button onClick={() => setGrid((g) => !g)} className="px-3 py-1.5 rounded-md hover:bg-secondary text-sm flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            <Grid3x3 className="w-4 h-4" /> Slides
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          <button onClick={() => setGrid((g) => !g)} className="px-2 sm:px-3 py-1.5 rounded-md hover:bg-secondary text-sm flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            <Grid3x3 className="w-4 h-4" /> <span className="hidden sm:inline">Slides</span>
           </button>
           <button onClick={() => fs ? document.exitFullscreen() : document.documentElement.requestFullscreen()}
-            className="px-3 py-1.5 rounded-md bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm flex items-center gap-2 font-medium hover:opacity-90 transition-opacity">
+            className="px-2 sm:px-3 py-1.5 rounded-md bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm flex items-center gap-2 font-medium hover:opacity-90 transition-opacity">
             {fs ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-            Apresentar
+            <span className="hidden sm:inline">Apresentar</span>
           </button>
         </div>
       </header>
