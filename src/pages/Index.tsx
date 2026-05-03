@@ -110,7 +110,7 @@ const Index = () => {
             transition={{ duration: 0.4 }}
             className="absolute inset-0"
           >
-            <Stage>
+            <Stage portrait={isMobile}>
               <Current i={idx + 1} t={total} />
             </Stage>
           </motion.div>
