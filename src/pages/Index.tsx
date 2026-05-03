@@ -45,6 +45,7 @@ const Index = () => {
   const [grid, setGrid] = useState(false);
   const [fs, setFs] = useState(false);
   const total = slides.length;
+  const isMobile = useIsMobile();
 
   const next = () => setIdx((i) => Math.min(i + 1, total - 1));
   const prev = () => setIdx((i) => Math.max(i - 1, 0));
