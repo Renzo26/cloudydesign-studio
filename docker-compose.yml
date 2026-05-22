@@ -1,0 +1,8 @@
+services:
+  cloudysite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
