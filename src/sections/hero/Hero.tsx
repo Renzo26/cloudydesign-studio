@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, ChevronDown, Zap, Layers, Sparkles } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import { HeroScene } from '@/three/HeroScene'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -12,11 +12,6 @@ function fade(delay = 0, y = 32) {
   }
 }
 
-const floatingStats = [
-  { icon: Zap,      label: 'Projetos Entregues', value: '4+' },
-  { icon: Layers,   label: 'Frentes Técnicas',   value: '5'  },
-  { icon: Sparkles, label: 'Personalizado',       value: '100%' },
-]
 
 export function Hero() {
   return (
@@ -100,7 +95,7 @@ export function Hero() {
         </motion.p>
 
         {/* CTAs */}
-        <motion.div {...fade(1.15, 16)} className="flex flex-wrap gap-4 justify-center mb-20">
+        <motion.div {...fade(1.15, 16)} className="flex flex-wrap gap-4 justify-center">
           <a href="#servicos" className="btn-primary">
             Explorar Serviços <ArrowRight size={16} />
           </a>
@@ -108,31 +103,6 @@ export function Hero() {
             Ver Projetos
           </a>
         </motion.div>
-
-        {/* Floating stat chips */}
-        <div className="flex flex-wrap gap-4 justify-center mb-4">
-          {floatingStats.map((s, i) => {
-            const Icon = s.icon
-            return (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 30, scale: 0.88 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.75, delay: 1.3 + i * 0.12, ease }}
-                className="glass rounded-2xl px-6 py-4 flex items-center gap-4"
-                style={{ animation: `float ${8 + i * 2}s ease-in-out ${i * 1.5}s infinite` }}
-              >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-blue/30 to-brand-cyan/20 flex items-center justify-center">
-                  <Icon size={16} className="text-brand-cyan" />
-                </div>
-                <div className="text-left">
-                  <div className="font-display font-bold text-xl text-gradient-brand leading-none">{s.value}</div>
-                  <div className="font-mono text-[10px] text-white/40 uppercase tracking-widest mt-1">{s.label}</div>
-                </div>
-              </motion.div>
-            )
-          })}
-        </div>
       </div>
 
       {/* Scroll cue */}

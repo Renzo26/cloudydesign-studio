@@ -15,6 +15,7 @@ export interface Projeto {
   description: string
   techs: string[]
   result: string
+  image: string
 }
 
 export interface StackCategoria {
@@ -62,36 +63,40 @@ export const servicos: Servico[] = [
 
 export const projetos: Projeto[] = [
   {
-    title: 'CRM Automatizado',
-    client: 'Empresa de Saúde',
-    category: 'Automação + CRM',
-    description: 'Integração entre WhatsApp, agenda médica e CRM próprio com qualificação automática de leads via IA.',
-    techs: ['n8n', 'OpenAI', 'PostgreSQL', 'React'],
-    result: 'Redução de 70% no tempo de agendamento',
+    title: 'Mecaflow',
+    client: 'Oficinas Mecânicas',
+    category: 'SaaS + Automação',
+    description: 'Plataforma SaaS para oficinas com bot de WhatsApp, agendamento automático, CRM de clientes e dashboard operacional — tudo em uma tela. Elimina planilhas, reduz tempo de resposta e aumenta captação de agendamentos.',
+    techs: ['FastAPI', 'React', 'Supabase', 'Redis', 'WAHA', 'Docker'],
+    result: 'Atendimento centralizado e agendamentos automatizados',
+    image: '/projetos/Dashboard.PNG',
   },
   {
-    title: 'Dashboard Financeiro',
-    client: 'Rede de Franquias',
-    category: 'Analytics',
-    description: 'Painel consolidado com dados de 12 unidades — faturamento, estoque e margem em tempo real com alertas automáticos.',
-    techs: ['Power BI', 'Python', 'SQL Server', 'Azure'],
-    result: 'Visibilidade total em tempo real',
+    title: 'Clínica Simioni — Sistema',
+    client: 'Clínica Simioni',
+    category: 'SaaS Clínico',
+    description: 'Sistema SaaS multi-tenant para clínicas com bot de IA no WhatsApp, agenda por profissional, prontuários e perfis de acesso para secretaria e equipe clínica. Reduz faltas, elimina retrabalho e melhora a experiência do paciente.',
+    techs: ['FastAPI', 'React', 'Supabase', 'Claude API', 'WAHA', 'Docker'],
+    result: 'Operação clínica digitalizada com IA',
+    image: '/projetos/Simione_Sistema.PNG',
   },
   {
-    title: 'Agente de Atendimento IA',
-    client: 'E-commerce',
-    category: 'IA Generativa',
-    description: 'Chatbot RAG treinado com catálogo e políticas da empresa — resolve 80% das dúvidas sem intervenção humana.',
-    techs: ['LangChain', 'OpenAI', 'Pinecone', 'Next.js'],
-    result: '80% de resolução automática',
+    title: 'Site Institucional — Clínica Simioni',
+    client: 'Clínica Simioni',
+    category: 'Site Institucional',
+    description: 'Site moderno para clínica com 40+ anos de tradição — especialidades, equipe, convênios e agendamento direto pelo WhatsApp. Design editorial com animações, SEO otimizado e deploy em produção.',
+    techs: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Docker', 'Nginx'],
+    result: 'Presença digital com foco em conversão',
+    image: '/projetos/Site.PNG',
   },
   {
-    title: 'Pipeline de Dados ETL',
-    client: 'Indústria',
-    category: 'Data Engineering',
-    description: 'Pipeline ETL automatizado que consolida dados de 5 fontes distintas em um data warehouse para análise gerencial.',
-    techs: ['Python', 'Airflow', 'dbt', 'BigQuery'],
-    result: 'Relatórios automáticos diários',
+    title: 'Automação de Instagram',
+    client: 'Biscogy',
+    category: 'Automação',
+    description: 'Automação que monitora comentários em posts do Instagram, responde automaticamente por palavras-chave e dispara DMs personalizadas para cada interação. Orquestrado via n8n para lojas que vendem pelo Instagram.',
+    techs: ['n8n', 'Instagram API', 'Webhooks'],
+    result: 'Respostas automáticas 24/7 no Instagram',
+    image: '/projetos/BiscogyPNG.PNG',
   },
 ]
 

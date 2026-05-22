@@ -227,6 +227,7 @@
   .stat-number {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
+    letter-spacing: -0.04em;
     background: linear-gradient(135deg, hsl(var(--c-blue)), hsl(var(--c-cyan)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

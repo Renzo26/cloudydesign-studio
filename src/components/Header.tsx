@@ -4,12 +4,11 @@ import { Menu, X } from 'lucide-react'
 import { Logo } from './Logo'
 
 const links = [
-  { href: '#sobre',       label: 'Sobre' },
-  { href: '#servicos',    label: 'Serviços' },
-  { href: '#projetos',    label: 'Projetos' },
-  { href: '#stack',       label: 'Stack' },
-  { href: '#diferenciais',label: 'Diferenciais' },
-  { href: '#contato',     label: 'Contato' },
+  { href: '#servicos',      label: 'Serviços' },
+  { href: '#sobre',         label: 'Sobre' },
+  { href: '#projetos',      label: 'Projetos Entregues' },
+  { href: '#configurador',  label: 'Orçamento' },
+  { href: '#contato',       label: 'Contato' },
 ]
 
 export function Header() {
