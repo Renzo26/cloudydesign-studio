@@ -1,0 +1,11 @@
+services:
+  cloudydesign-studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cloudydesign-studio:latest
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    labels:
+      - "easypanel.domain=cloudydesign.seudominio.com"
